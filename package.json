@@ -6,6 +6,9 @@
   "author": "wyrover <wyrover@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "start": "yarn start:dev",
+    "start:dev": "cross-env NODE_ENV=development rollup -c rollup.config.js --silent",
+    "build": "cross-env NODE_ENV=production rollup -c rollup.config.js",
     "lint": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter .",
     "lint:fix": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix ."
   },

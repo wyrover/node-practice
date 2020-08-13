@@ -1,10 +1,12 @@
 const { execSync } = require('child_process')
 const fs = require('fs')
 
-function execmd (cmd) {
-  const out = execSync(cmd)
+function execmd(cmd) {
+  let out = execSync(cmd)
   console.log(`${out}`)
 }
+
+
 
 execmd('yarn add --dev eslint')
 
@@ -64,6 +66,8 @@ const prettierrc = `{
 
 fs.writeFileSync('.prettierrc', prettierrc)
 
+
+
 const eslintrc = `module.exports = {
   root: true,
   parser: 'babel-eslint',
@@ -92,7 +96,10 @@ const eslintrc = `module.exports = {
 }
 `
 
-fs.writeFileSync('.eslintrc.js', eslintrc)
+
+fs.writeFileSync('.eslintrc', eslintrc)
+
+
 
 const eslintignore = `bin
 public
@@ -104,5 +111,6 @@ config
 */*/*-compiled.js
 */*/*/*-compiled.js
 `
+
 
 fs.writeFileSync('.eslintignore', eslintignore)
